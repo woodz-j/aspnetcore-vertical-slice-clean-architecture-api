@@ -100,4 +100,20 @@ DELETE /api/products/{id}
 - JWT (Microsoft.AspNetCore.Authentication.JwtBearer)
 - Swagger (Swashbuckle)
 
+### Future Improvements
+- Global exception handling middleware
+- ProblemDetails error responses
+- Pagination and filtering for products
+- Integration and unit tests
+- Refresh tokens / token rotation
+- Docker support
+- CI/CD pipeline
+
+### Summary
+This project demonstrates how to build a modern, production-style .NET API with:
+
+- Clean separation of concerns
+- Secure authentication
+- Scalable architecture
+- Real-world backend patterns
 

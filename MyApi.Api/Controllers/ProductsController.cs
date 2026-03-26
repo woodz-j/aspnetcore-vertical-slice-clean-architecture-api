@@ -23,6 +23,12 @@ public class ProductsController : ControllerBase
         _products = products;
     }
 
+    [HttpGet("boom")]
+    public IActionResult Boom()
+    {
+        throw new Exception("Test exception");
+    }
+
     [Authorize]
     [HttpGet]
     public async Task<ActionResult<List<ProductListItemDto>>> GetAll(CancellationToken cancellationToken)

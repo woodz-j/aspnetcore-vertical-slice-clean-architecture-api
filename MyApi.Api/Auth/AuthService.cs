@@ -11,7 +11,7 @@ public class AuthService : IAuthService
     public AuthService(
         IUserRepository users,
         IPasswordHasherService passwordHasher,
-        JwtTokenGenerator tokenGenerator)
+        IJwtTokenGenerator tokenGenerator)
     {
         _users = users;
         _passwordHasher = passwordHasher;

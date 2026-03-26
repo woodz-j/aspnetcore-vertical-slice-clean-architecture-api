@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 //using Microsoft.OpenApi.Models;
 using MyApi.Api.Auth;
+using MyApi.Api.Middleware;
 using MyApi.Application.Abstractions;
 using MyApi.Infrastructure;
 using System.Text;
@@ -31,6 +32,10 @@ builder.Services.AddSingleton<IJwtTokenGenerator,  JwtTokenGenerator>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
+// add aspnetcore Problem details
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -97,6 +102,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// add middlewares
+app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 
